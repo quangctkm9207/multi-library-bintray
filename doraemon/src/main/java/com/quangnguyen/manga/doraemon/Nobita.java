@@ -13,7 +13,7 @@ public class Nobita extends Character {
 
   public Nobita() {
     super("Nobita");
-    image = R.drawable.ic_sample;
+    image = R.drawable.nobita;
   }
 
   public int getImage() {

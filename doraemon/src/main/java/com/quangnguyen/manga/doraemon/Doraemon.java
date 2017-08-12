@@ -13,7 +13,7 @@ public class Doraemon extends Character {
 
   public Doraemon() {
     super("Doraemon");
-    this.image = R.drawable.ic_sample;
+    this.image = R.drawable.doraemon;
   }
 
   public int getImage() {
