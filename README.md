@@ -13,6 +13,13 @@ For example, you develop Java and Android library which includes sub-libraries a
 ```
 
 #### Release new version on Bintray
+Firstly, you need to put your own Bintray account credentials inside `local.properties` file (which is not tracked by version control).
+```gradle
+bintray.user=your_username
+bintray.apikey=your_api_key (i.e: adfasdf342342j34lba84a25f8c3)
+bintray.gpg.password=your_gpg_password
+```  
+Now, it is ready for uploading.
 ```
 ./gradlew bintrayUpload
 ```
