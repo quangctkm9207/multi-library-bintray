@@ -23,6 +23,7 @@ If you are in the same situation, let's check it out.
 Besides, it could be optimized more. For example, we currently put them all in one repository on Bintray, so all mangas are quite coupled.
 A little bit change should be made to separate all mangas into their own repositories.
 
+### Command
 
 #### Clean
 ```
@@ -35,6 +36,13 @@ A little bit change should be made to separate all mangas into their own reposit
 ```
 
 #### Release new version on Bintray
+Firstly, you need to put your own Bintray account credentials inside `local.properties` file (which is not tracked by version control).
+```gradle
+bintray.user=your_username
+bintray.apikey=your_api_key (i.e: adfasdf342342j34lba84a25f8c3)
+bintray.gpg.password=your_gpg_password
+```  
+Now, it is ready for uploading.
 ```
 ./gradlew bintrayUpload
 ```
