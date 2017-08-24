@@ -2,6 +2,7 @@ package com.quangnguyen.sample;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.CardView;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -27,8 +28,8 @@ public class MainActivity extends AppCompatActivity {
   }
 
   private void populateViews() {
-    ImageView doraemonImage = findViewById(R.id.image_doraemon);
-    ImageView nobitaImage = findViewById(R.id.image_nobita);
+    CardView doraemonImage = findViewById(R.id.image_doraemon);
+    CardView nobitaImage = findViewById(R.id.image_nobita);
 
     // Set images
     doraemonImage.setBackgroundResource(doraemon.getImage());
