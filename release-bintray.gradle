@@ -3,7 +3,7 @@
  * */
 ext {
   bintrayRepo = 'maven'
-  bintrayName = 'manga'
+  bintrayName = POM_BINTRAY_NAME
 
   publishedGroupId = 'com.quangnguyen.manga'
   libraryName = 'Manga'
