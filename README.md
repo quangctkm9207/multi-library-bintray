@@ -10,8 +10,9 @@ The steps are explained fully at [my blog post](https://blog.mindorks.com/distri
 // ...
 apply from: rootProject.file('release-bintray.gradle')
 ```  
-For exampke, for module [`manga`](/manga/build.gradle) in this project.  
-3. Set your Bintray credentials
+For example, please check the module [`manga`'s gradle file](/manga/build.gradle) in this project.  
+
+3. Set your Bintray credentials  
 You need to put your own Bintray account credentials inside `local.properties` file (which is not tracked by version control).
 ```gradle
 bintray.user=your_username
