@@ -1,34 +1,39 @@
 ## Multiple Library Bintray Release
-A demo project which illustrates Bintray release configuration for multiple library modules.
-For example, you develop Java and Android library which includes sub-libraries and they are built by Gradle.
+A demo project which illustrates how to a distribute Java/Android multiple-module library on Bintray easily.  
 
-It has been released successfully on Bintray, check it out at [ ![Download](https://api.bintray.com/packages/quangnguyen/maven/com.quangnguyen.manga%3Adoraemon/images/download.svg) ](https://bintray.com/quangnguyen/maven/com.quangnguyen.manga%3Adoraemon/_latestVersion).    
-Details are explained fully at [this blog post](https://blog.mindorks.com/distribute-multiple-module-library-on-bintray-for-java-and-android-developers-212216bc1aa7).
+The steps are explained fully at [my blog post](https://blog.mindorks.com/distribute-multiple-module-library-on-bintray-for-java-and-android-developers-212216bc1aa7).
 
-### Command
-
-#### Clean
-```
-./gradlew clean
-```
-
-#### Build (Assemble + Test)
-```
-./gradlew build
-```
-
-#### Release new version on Bintray
-Firstly, you need to put your own Bintray account credentials inside `local.properties` file (which is not tracked by version control).
+### Steps
+1. Copy [`jcenter` folder](/jcenter) and [`release-bintray.gradle` file](/release-bintray.gradle) into your project  
+2. Add the following line into each module's `build.gradle` file  
+```gradle
+// ...
+apply from: rootProject.file('release-bintray.gradle')
+```  
+For exampke, for module [`manga`](/manga/build.gradle) in this project.  
+3. Set your Bintray credentials
+You need to put your own Bintray account credentials inside `local.properties` file (which is not tracked by version control).
 ```gradle
 bintray.user=your_username
 bintray.apikey=your_api_key (i.e: adfasdf342342j34lba84a25f8c3)
 bintray.gpg.password=your_gpg_password
 ```  
-Now, it is ready for uploading.
+4. In each module, update its Bintray information in `gradle.properties`
+For example, for module [`manga`](https://github.com/quangctkm9207/multi-library-bintray/tree/master/manga) in this project.
+```
+POM_NAME=Manga
+POM_DESCRIPTION=Define general mange character
+POM_BINTRAY_NAME=com.quangnguyen.manga:manga
+POM_ARTIFACT_ID=manga
+POM_PACKAGING=jar
+POM_VERSION=1.1.0
+```  
+5. Run script from command line
+- To publish all modules at the same time
 ```
 ./gradlew bintrayUpload
 ```
-or for a specific module
+- To publish a specific module separately
 ```
 ./gradlew *moduleName*:bintrayUpload
 ```
