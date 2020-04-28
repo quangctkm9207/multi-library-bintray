@@ -38,3 +38,7 @@ POM_VERSION=1.1.0
 ```
 ./gradlew *moduleName*:bintrayUpload
 ```
+
+---
+If you are interested in my useful blog posts and cool projects, you can subscribe to my newsletter by clicking the below link.  
+[SUBSCRIBE TO USEFUL BLOG POSTS AND COOL PROJECTS.](http://eepurl.com/g1nqlf)
