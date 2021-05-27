@@ -1,3 +1,6 @@
+## DEPRECATED
+Bintray just stopped accepting new packages from early 2021. Therefore, to host your Java/Library, you can use Maven Central (Sonatype) by following [this post](https://getstream.io/blog/publishing-libraries-to-mavencentral-2021/).
+
 ## Multiple Library Bintray Release
 A demo project which illustrates how to a distribute Java/Android multiple-module library on Bintray easily.  
 
